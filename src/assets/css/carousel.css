@@ -1,0 +1,323 @@
+/* Colors */
+:root {
+  --color-azul: #002763;
+  --color-laranza: #ff5a19;
+  --color-vermelho: #d9030b;
+  --color-verde: #b4ca3c;
+  --color-azul-escuro: #002262;
+  --color-default: #222222;
+  --color-primary: #008374;
+  --color-secondary: #f85a40;
+}
+/*--------------------------------------------------------------
+# heroCarrousel Section
+--------------------------------------------------------------*/
+#heroCarrousel {
+  width: 100%;
+  height: 100%;
+  margin-top: -20px;
+  /* height: 80vh; */
+  background: var(--color-vermelho);
+  position: relative; 
+  background-position: center;
+  background-size: cover;
+  /* padding: 60px 0 0 0; */
+}
+#heroCarrousel h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+#heroCarrousel p {
+  /* color: rgba(255, 255, 255, 0.6); */
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 30px;
+  /*  */
+  text-align: center;
+}
+
+#heroCarrousel img {
+  width: 100%;
+  /* height: 100%; */
+  /* object-fit: cover; */
+}
+
+/*--------------------------------------------------------------
+  # heroCarrousel Carrousel Section
+  --------------------------------------------------------------*/
+
+#heroCarrousel .carousel,
+#heroCarrousel .carousel-inner,
+#heroCarrousel .carousel-item,
+#heroCarrousel .carousel-item::before {
+  position: absolute;
+  /* position: relative; */
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+#heroCarrousel .carousel-item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#heroCarrousel .carousel-item::before {
+  content: "";
+  background-color: rgba(30, 35, 40, 0.6);
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 70px;
+  left: 50px;
+  right: 50px;
+}
+
+  .carousel-inner .carousel-item {
+  transition-property: opacity;
+  background-position: center top;
+}
+
+  .carousel-inner .carousel-item,
+  .carousel-inner .active.carousel-item-start,
+  .carousel-inner .active.carousel-item-end {
+  opacity: 0;
+}
+
+#heroCarrousel .carousel-inner .active,
+#heroCarrousel .carousel-inner .carousel-item-next.carousel-item-start,
+#heroCarrousel .carousel-inner .carousel-item-prev.carousel-item-end {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+#heroCarrousel .carousel-inner .carousel-item-next,
+#heroCarrousel .carousel-inner .carousel-item-prev,
+#heroCarrousel .carousel-inner .active.carousel-item-start,
+#heroCarrousel .carousel-inner .active.carousel-item-end {
+  left: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+#heroCarrousel .carousel-control-next-icon,
+#heroCarrousel .carousel-control-prev-icon {
+  background: none;
+  font-size: 30px;
+  line-height: 0;
+  width: auto;
+  height: auto;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  transition: 0.3s;
+  color: rgba(255, 255, 255, 0.5);
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#heroCarrousel .carousel-control-next-icon:hover,
+#heroCarrousel .carousel-control-prev-icon:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#heroCarrousel .carousel-indicators li {
+  cursor: pointer;
+  background: #fff;
+  overflow: hidden;
+  border: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+#heroCarrousel .carousel-indicators li.active {
+  opacity: 1;
+  background: #d9232d;
+}
+
+.InicioSlide{
+  width: 100%;
+  height: 100%;
+  /* background: red; */
+}
+/* Formatacao do estilo de  */
+.fundoPrincipal img{ 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 110vh;
+}
+
+
+
+.fundoPrincipal{ 
+  width: 100%;
+  height: 100%;   
+  margin-top: -20px;
+}
+
+
+
+@media(max-width:500px){
+  .fundoPrincipal img{  
+    width: 100%;
+    height: 600px; 
+    object-fit: cover;
+    background-size: cover;
+  }
+  
+}
+
+
+
+/* .fundoPrincipal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.384);
+  color: #fff;
+  width: 100%;
+  height: 100%;
+} */
+/* h2#tituloInicio {
+  font-size: 2.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+} */
+/* MEDIA QUERY */
+@media (min-width: 1365px) {
+  #heroCarrousel {
+    background-attachment: fixed;
+  }
+  .heroCarrousel1 {
+    background-attachment: fixed;
+  }
+}
+
+@media (min-width: 1024px) {
+  #heroCarrousel .carousel-control-prev,
+  #heroCarrousel .carousel-control-next {
+    width: 5%;
+  }
+}
+@media (min-width: 1200px) {
+  .heroCarrousel1 .icon-boxes:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: calc(50% + 20px);
+    background-color: #fff;
+  }
+}
+
+@media (max-width: 992px) {
+  /* #heroCarrousel {
+      height: 100vh;
+    } */
+
+  #heroCarrousel .carousel-container {
+    top: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* #heroCarrousel h2 {
+      font-size: 28px;
+    } */
+}
+@media (max-width: 640px) {
+  .heroCarrousel1 h2 {
+    font-size: 36px;
+  }
+}
+@media (max-height: 500px) {
+  #heroCarrousel {
+    height: 120vh;
+  }
+}
+@media (max-width: 375px) {
+  #heroCarrousel h2 {
+    font-size: 1rem;
+    /* color: red; */
+  }
+  #heroCarrousel p {
+    color: #fff;
+    margin-bottom: 30px;
+    /*  */
+    text-align: center;
+  }
+
+
+}
+/*  heroCarrousel 1*/
+
+/*  */
+.heroCarrousel1 .icon-boxes {
+  padding-bottom: 60px;
+}
+
+.heroCarrousel1 .icon-box {
+  padding: 60px 30px;
+  position: relative;
+  overflow: hidden;
+  background: var(--color-azul);
+  box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  /* z-index: 1; */
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.heroCarrousel1 .icon-box .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.heroCarrousel1 .icon-box .title a {
+  color: #fff;
+  transition: 0.3s;
+}
+
+.heroCarrousel1 .icon-box .icon {
+  margin-bottom: 20px;
+  padding-top: 10px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  font-size: 48px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.heroCarrousel1 .icon-box:hover {
+  /* background: #009786; */
+  background: var(--color-azul);
+}
+
+.heroCarrousel1 .icon-box:hover .title a,
+.heroCarrousel1 .icon-box:hover .icon {
+  color: #fff;
+}
+
+
