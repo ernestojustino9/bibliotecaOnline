@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.0.1",
     "aos": "^2.3.4",
     "axios": "^1.8.4",
     "bootstrap": "^5.3.3",
@@ -18,12 +21,14 @@
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^19.0.0",
+    "react-international-phone": "^4.5.0",
     "react-router-dom": "^7.4.1",
     "react-slick": "^0.30.3",
     "react-toastify": "^11.0.5",
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.17.2",
-    "toastr": "^2.1.4"
+    "toastr": "^2.1.4",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
