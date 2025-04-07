@@ -4,8 +4,9 @@ const Footer = () => {
   return (
     <div>
       {/* <!-- ======= Footer ======= --> */}
-      <footer className="bg-dark text-lg-start"  style={{backgroundColor: "black"}}>
-        <hr className="m-0" />
+      {/* <footer className="bg-dark text-lg-start"  style={{backgroundColor: "black"}}> */}
+      <footer className="bg-dark text-lg-start">
+        {/* <hr className="m-0" />
         <div className="text-center py-4 align-items-center">
           <p>Follow MDB on social media</p>
           <a href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" className="btn btn-primary m-1" role="button"
@@ -24,10 +25,19 @@ const Footer = () => {
             data-mdb-ripple-init target="_blank">
             <i className="fab fa-github"></i>
           </a>
-        </div>
-        <div className="text-center p-3" style={{backgroundColor: "black"}}>
-          © 2025 Copyright:
-          <a className="text-dark" href="https://mdbootstrap.com/">EJ-Developer</a>
+        </div> */}
+        {/* <div className="text-center p-3 navbar-blue" style={{backgroundColor: "black"}} > */}
+        <div
+          className="text-center p-3 navbar-blue"
+          style={{ color: "#fff", fontWeight: "bold" }}
+        >
+          © 2025
+          <a className="text-dark" href="https://www.facebook.com/ejdeveloper">
+            <span style={{ color: "#fff", fontWeight: "bold" }}>
+              {" "}
+              EJ-Developer
+            </span>
+          </a>
         </div>
       </footer>
       {/*  */}
