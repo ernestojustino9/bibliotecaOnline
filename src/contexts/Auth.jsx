@@ -1,11 +1,9 @@
 import { createContext, useEffect, useState } from "react";
 import api from "../service/api";
 import Cookies from "js-cookie";
-// import jwt_decoded from "jwt-decode";
 import { jwtDecode } from "jwt-decode";
-// import { login, logout, TOKEN_KEY, USER_KEY } from "../service/auth";
 import { USER_KEY, TOKEN_KEY, entrar, sair } from "../service/auth";
-import { createSession } from "../service/LoginService";
+import { createSession } from "../service/UsuarioService";
 // import { Loading } from "../components/loading";
 import * as messages from "../../src/components/message/toastr";
 import { useNavigate } from "react-router-dom";
@@ -46,7 +44,7 @@ export const AuthProvider = ({ children }) => {
             //
             // navigate("/formation");
         } catch (error) {
-            messages.mensagemErro("Ocorreu um erro interno. Tente novamente!");
+            messages.mensagemErro("Email ou senha incoreto...!");
             console.log(error);
         }
     };

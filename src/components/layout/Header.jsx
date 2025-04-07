@@ -1,5 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import HomeIcon from '@mui/icons-material/Home';
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import PersonIcon from '@mui/icons-material/Person';
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 // import { AuthContext } from "../../contexts/Auth";
@@ -82,7 +85,8 @@ const Header = () => {
                     aria-current="page"
                     to="/"
                   >
-                    Inicio
+             <span>       <HomeIcon/>
+             Inicio</span>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -93,7 +97,9 @@ const Header = () => {
                     rel="nofollow"
                     // target="_blank"
                   >
-                    Livros
+                    <span>
+                      <LibraryBooksIcon/> Livros                  </span>
+                    
                   </a>
                 </li>
               </ul>
@@ -115,7 +121,9 @@ const Header = () => {
                     onClick={handleClickOpen}
                   >
                     {/* <i className="fab fa-youtube"></i> */}
+                    <span><PersonIcon/>
                     Entrar
+                    </span>
                   </a>
                 </li>
                 <li className="nav-item me-3 me-lg-0">
@@ -164,7 +172,7 @@ const Header = () => {
         fullWidth
       >
         <DialogContent>
-          <Acesso />
+          <Acesso setOpen={handleClose} />
         </DialogContent>
       </Dialog>
     </div>

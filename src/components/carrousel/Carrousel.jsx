@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import { getBanners, getBannersHome } from "../../service/BannerService";
+// import { getBanners, getBannersHome } from "../../service/BannerService";
 import img1 from "/src/assets//img/img1.jpeg";
 import img2 from "/src/assets//img/img2.jpeg";
 import img3 from "/src/assets//img/img3.jpeg";
@@ -9,22 +9,21 @@ import Slider from "react-slick";
 const Carrousel = () => {
   const [carrouses, setCarrouses] = useState([]);
   //
-  useEffect(() => {
-    getAllBanners();
-  }, []);
+  // useEffect(() => {
+  //   getAllBanners();
+  // }, []);
 
   //LISTAR
-  const getAllBanners = () => {
-    getBannersHome("home")
-      .then((response) => {
-        setCarrouses(response.data.serializes);
-        console.log(response.data, "Dados Banner");
-      })
-      .catch((error) => {
-        // messages.mensagemErro(error);
-        console.log(error);
-      });
-  };
+  // const getAllBanners = () => {
+  //   getBannersHome("home")
+  //     .then((response) => {
+  //       setCarrouses(response.data.serializes);
+  //       console.log(response.data, "Dados Banner");
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
   //
   const settings = {
     // infinite: true,

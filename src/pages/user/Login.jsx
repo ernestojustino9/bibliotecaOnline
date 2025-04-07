@@ -1,14 +1,17 @@
 import React, { useContext, useState } from 'react'
 import * as messages from "../../components/message/toastr";
-// import { AuthContext } from '../../contexts/auth';
-// import { Link } from 'react-router-dom';
+import {
+    CircularProgress
+} from "@mui/material";
+import { AuthContext } from '../../contexts/Auth';
 
 
 const Login = () => {
-    // const { login } = useContext(AuthContext);
+    const { login } = useContext(AuthContext);
+    const [loading, setLoading] = useState(false);
     const [values, setValues] = useState({
         email: "",
-        password: "",
+        senha: "",
     });
 
     const handleChange = ({ currentTarget: input }) => {
@@ -17,10 +20,13 @@ const Login = () => {
     };
     const handleLogin = async (e) => {
         e.preventDefault();
+        setLoading(true);
         try {
             login(values);
         } catch (error) {
             messages.mensagemErro(error, "Ocorreu um erro. Tente novamente!")
+        } finally {
+            setLoading(false);
         }
     };
     //
@@ -39,15 +45,22 @@ const Login = () => {
                                     // value={email}
                                     onChange={handleChange} />
                             </div>
+                            <br />
                             <div className="form-group">
                                 <input type="password" className="form-control" placeholder="Password"
                                     name="password"
-                                    // value={password}
+                                    // value={senha}
                                     onChange={handleChange} />
                             </div>
-                            <button className="btn primary_btn w-100">Entrar</button>
+                            <br />
+                            <button className="btn primary_btn w-100" style={{ color: "#fff" }}>
+                            {loading ? (
+                  <CircularProgress size={24} sx={{ color: "#fff" }} />
+                ) : (
+                  "Entrar"
+                )}</button>
                         </form>
-                       
+
                     </div>
                 </div>
             </div>

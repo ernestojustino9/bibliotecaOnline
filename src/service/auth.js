@@ -1,7 +1,7 @@
 import Cookies from "js-cookie";
 
-export const TOKEN_KEY = "tg_admin@token";
-export const USER_KEY = "tg_admin@user";
+export const TOKEN_KEY = "bl_admin@token";
+export const USER_KEY = "bl_admin@user";
 
 export const isAuthenticated = () => Cookies.get(TOKEN_KEY) != null;
 export const getToken = () => Cookies.get(TOKEN_KEY);

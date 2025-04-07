@@ -5,14 +5,26 @@ const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2
 // Esquema de validação para campos de usuário (CADASTRO)
 export const registroSchema = Yup.object().shape({
   nome: Yup.string().required("Nome é obrigatório"),
+  sobrenome: Yup.string().required("Sobrenome é obrigatório"),
+  nacionalidade: Yup.string().required("Nacionalidade é obrigatório"),
+  endereco: Yup.string().required("Endereço é obrigatório"),
+  bilheteDeIdentidade: Yup
+    .string()
+    .min(8, "O campo deve ter no mínimo 8 caracteres!")
+    .max(14, "O campo deve ter no máximo 14 caracteres!")
+    .required("Preencha o campo Bilhete de Identidade!"),
+    genero: Yup.string().required("Genero é obrigatório"),
   email: Yup.string().email("Email inválido").required("Email é obrigatório"),
   telefone: Yup.string().required("Telefone é obrigatório"),
-  password: Yup.string()
+  senha: Yup.string()
       .required("Senha é obrigatória")
       .matches(
           /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/,
           "Senha deve conter pelo menos uma letra maiúscula, um número e um símbolo, e ter no mínimo 8 caracteres"
-      )
+      ),
+      confirmarSenha: Yup.string()
+      .required("O campo confirmação da senha obrigatório!")
+      .oneOf([Yup.ref("senha"), null], "A senha não confere"),
 });
 
 // Esquema de validação para campos de usuário (CADASTRO)

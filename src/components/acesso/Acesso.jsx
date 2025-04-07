@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Login from "../../pages/user/Login";
 import Register from "../../pages/user/Register";
 
-const Acesso = () => {
+const Acesso = ({setOpen}) => {
   const [view, setView] = useState("login");
 
   return (
@@ -16,7 +16,7 @@ const Acesso = () => {
         //   aria-labelledby="tab-login"
         >
           {/*  */}
-          {view === "login" ? <Login /> : <Register />}
+          {view === "login" ? <Login setOpen={setOpen}/> : <Register setOpen={setOpen}/>}
           {/*  */}
           <div style={{display: "flex", alignItems: "center", justifyContent: "center", marginTop: "10px" }}>
             {view === "login" ?   <a
