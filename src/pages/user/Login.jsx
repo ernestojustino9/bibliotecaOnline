@@ -6,7 +6,7 @@ import {
 import { AuthContext } from '../../contexts/Auth';
 
 
-const Login = () => {
+const Login = ({setOpen}) => {
     const { login } = useContext(AuthContext);
     const [loading, setLoading] = useState(false);
     const [values, setValues] = useState({
@@ -14,6 +14,9 @@ const Login = () => {
         senha: "",
     });
 
+    const fecharModal = async ()=>{
+        setOpen()
+    }
     const handleChange = ({ currentTarget: input }) => {
         const { name, value } = input;
         setValues({ ...values, [name]: value });
@@ -23,6 +26,7 @@ const Login = () => {
         setLoading(true);
         try {
             login(values);
+            fecharModal();
         } catch (error) {
             messages.mensagemErro(error, "Ocorreu um erro. Tente novamente!")
         } finally {
@@ -48,17 +52,17 @@ const Login = () => {
                             <br />
                             <div className="form-group">
                                 <input type="password" className="form-control" placeholder="Password"
-                                    name="password"
+                                    name="senha"
                                     // value={senha}
                                     onChange={handleChange} />
                             </div>
                             <br />
                             <button className="btn primary_btn w-100" style={{ color: "#fff" }}>
-                            {loading ? (
-                  <CircularProgress size={24} sx={{ color: "#fff" }} />
-                ) : (
-                  "Entrar"
-                )}</button>
+                                {loading ? (
+                                    <CircularProgress size={24} sx={{ color: "#fff" }} />
+                                ) : (
+                                    "Entrar"
+                                )}</button>
                         </form>
 
                     </div>
